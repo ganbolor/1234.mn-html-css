@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Area</title>
+  <style>
+    .container {
+      display: grid;
+      grid-template-areas: 
+        'header header header'
+        'content content sidebar'
+        'box-1 box-2 box-2'
+        'box-3 box-3 box-3'
+        'footer footer footer';
+      grid-gap: 1rem;
+    }
+    
+    .header {
+      grid-area: header;
+      text-align: center;
+    }
+    .content {
+      grid-area: content;
+    }
+
+    .sidebar {
+      grid-area: sidebar;
+    }
+    
+    .box-1{
+      grid-area: box-1;
+    }
+
+    .box-2{
+      grid-area: box-2;
+    }
+
+    .box-3{
+      grid-area: box-3;
+    }
+
+    .footer {
+      grid-area: footer;
+      text-align: center;
+    }
+
+    .header,
+    .content,
+    .sidebar,
+    .box-1,
+    .box-2,
+    .box-3,
+    .footer {
+      border: 1px #ccc solid;
+      padding: 0.5rem;
+    }
+
+
+    @media(max-width: 500px){
+      
+      .container {
+        display: grid;
+        grid-template-areas: 
+          'header'
+          'content' 
+          'sidebar'
+          'box-1'
+          'box-2'
+          'box-3'
+          'footer';
+        grid-gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>
+        Миний вэб сайт
+      </h1>
+    </header>
+    <section class="content">
+        <h3>Тавтай морил</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta in voluptates dolores quidem deleniti, assumenda fugiat earum corporis consequuntur, vel quas? Quia debitis porro commodi sit expedita reiciendis officia maxime nemo cum voluptatum aut, ea quae consequuntur placeat ex veritatis doloribus quisquam tenetur pariatur ducimus amet eaque consectetur ut? Reprehenderit.</p>
+    </section>
+    <aside class="sidebar">
+      <h3>Холбоо барих</h3>
+      <ul>
+        <li>Платинум</li>
+        <li>Баянзүрх дүүрэг</li>
+        <li>test@google.com</li>
+        <li>976-99011996</li>
+        
+      </ul>
+
+    </aside>
+    <div class="box-1">
+      <h3>Гарчиг</h3>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi sint velit facere quis qui quia, porro itaque unde blanditiis et a assumenda cum, provident sed dolores voluptatem neque est magni vitae? Doloremque harum laborum animi provident reiciendis illo voluptates ex!</p>
+    </div>
+    <div class="box-2">
+      <h3>Гарчиг</h3>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi sint velit facere quis qui quia, porro itaque unde blanditiis et a assumenda cum, provident sed dolores voluptatem neque est magni vitae? Doloremque harum laborum animi provident reiciendis illo voluptates ex!</p>
+    </div>
+    <div class="box-3">
+      <h3>Гарчиг</h3>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi sint velit facere quis qui quia, porro itaque unde blanditiis et a assumenda cum, provident sed dolores voluptatem neque est magni vitae? Doloremque harum laborum animi provident reiciendis illo voluptates ex!</p>
+    </div>
+
+    <footer class="footer">
+      <p>Бүх эрх хуулиар хамгаалагдсан</p>
+
+    </footer>
+  </div>
+
+
+</body>
+</html>

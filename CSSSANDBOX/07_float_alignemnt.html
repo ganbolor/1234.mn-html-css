@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float and Alignment</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.4em;
+        }
+        .container{
+            max-width: 960px;
+            margin: 30px auto;
+        }
+        .clr{
+            clear: both;
+        }
+        .box {
+            background: #f4f4f4;
+            border: 1px solid #333;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+        .box p {
+                text-align: left;
+                /* text-align: right; */
+                text-align: center;
+                text-align: justify;
+        }
+        #box-2 {
+            float: left;
+            width: 68%;
+        }
+        #box-3 {
+            float: right;
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="box-1" class="box">
+            <h3>1-р гарчиг</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio ut enim eius blanditiis. Totam nihil dolore, molestias sapiente quaerat illum reiciendis voluptatibus sunt quidem ab assumenda veniam voluptas omnis laborum laudantium aliquid neque minus id harum et qui inventore fugiat deleniti libero? Aliquam tempore laboriosam consectetur incidunt, nisi omnis provident.</p>
+        </div>
+        <div id="box-2" class="box">
+            <h3>2-р гарчиг</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam voluptate ab nesciunt nulla numquam labore earum asperiores! In quae placeat dolores repellat fugiat totam consequuntur, nam ab hic blanditiis, sequi vero sit voluptate rerum voluptas recusandae. Consequuntur, at labore repudiandae asperiores perspiciatis cupiditate impedit nulla rerum, ut veritatis recusandae delectus suscipit optio quam quisquam soluta eveniet quidem accusantium dolor tempora!</p>
+        </div>
+        <div id="box-3" class="box">
+            <h3>3-р гарчиг</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In architecto eius veniam reprehenderit, quos voluptatum fuga. Soluta totam non voluptatibus minima minus corrupti temporibus dolor reiciendis, ullam aspernatur sapiente natus. Illo pariatur expedita molestias odio omnis delectus adipisci sint dolorum veritatis eligendi. Aut odit tempore molestias velit provident illo distinctio, voluptatum nam earum doloribus, eligendi quidem? Repellat enim vel quasi nobis facilis, blanditiis fugit, expedita illum quae, nemo aspernatur eum.</p>
+        </div>
+
+        <div class="clr"></div>
+
+        <div id="box-4" class="box">
+            <h3>4-р гарчиг</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In architecto eius veniam reprehenderit, quos voluptatum fuga. Soluta totam non voluptatibus minima minus corrupti temporibus dolor reiciendis, ullam aspernatur sapiente natus. Illo pariatur expedita molestias odio omnis delectus adipisci sint dolorum veritatis eligendi. Aut odit tempore molestias velit provident illo distinctio, voluptatum nam earum doloribus, eligendi quidem? Repellat enim vel quasi nobis facilis, blanditiis fugit, expedita illum quae, nemo aspernatur eum.</p>
+        </div>
+    </div>
+</body>
+</html>

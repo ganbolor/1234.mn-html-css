@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Shadows</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container {
+            display: flex;
+        }
+        .box {
+            padding: 1rem;
+            margin: 1rem;
+            background: coral;
+            color: #fff;
+
+            /* offset-x, offset-y, color */
+            /* box-shadow: 10px 10px teal; */
+            /* offset-x, offset-y, blur-radius, color */
+            /* box-shadow: 5px 5px 20px teal; */
+            
+            /* Хасах утга дээрээ сүүдэртэй болно */
+            /* box-shadow: -5px -5px 20px teal; */
+
+            /* offset-x, offset-y, blur-radius, spread-radious, color */
+            /* box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.4); */
+
+            /* inset, offset-x, offset-y, color */
+            /* box-shadow: inset -5px -5px teal; */
+
+            /* олон сүүдэр */
+            box-shadow: 3px 3px 10px teal, -3px -3px  10px olive;
+
+            /* Тусгай өнгө */
+            box-shadow:inset 10px 10px 20px 10px #CC0000 ,
+	inset 10px -10px 20px 10px #00CC00 ,
+	inset -10px -10px 20px 10px #FF4500 ,
+	inset -10px 10px 20px 10px #0000CC ,
+	50px 50px 50px 10px #CC0000 ,
+	50px -50px 50px 10px #00CC00 ,
+	-50px -50px 50px 10px #FF4500 ,
+	-50px 50px 50px 10px #0000CC ;
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h3>Гарчиг</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, dignissimos.</p>
+        </div>
+        <div class="box">
+            <h3>Гарчиг</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, dignissimos.</p>
+        </div>
+        <div class="box">
+            <h3>Гарчиг</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, dignissimos.</p>
+        </div>
+    </div>
+</body>
+</html>

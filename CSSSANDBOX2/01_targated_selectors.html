@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Targated Selectors</title>
+    <style>
+        /* Direct child */
+        div p {
+            background: #ddd;
+        }
+
+        /* Directly after -  Шууд дараагийн элемент */
+        div + p {
+            background: #333;
+            color: #fff
+        }
+        /* By attribute */
+        a[target] {
+            background: #ff0000;
+            color: #fff;
+        }
+
+        /* Specific value */
+        a[target='_blank'] {
+            background: #00ff00;
+            color: #fff;
+        }
+
+        input[type='text'],
+        input[type='email'] {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        input{
+
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <ul>
+            <li>Item 1</li>
+            <li><p>Item 2</p></li>
+            <li>Item 3</li>
+        </ul>
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    <p>Lorem ipsum dolor sit amet.</p>
+
+    <a href="#">Хуудас 1</a> <a href="#" target="_self">Хуудас 2</a> <a href="www.google.com" target="_blank">Хуудас 2</a>
+    <form action="">
+        <input type="text" placeholder="Нэр"> 
+        <input type="email" name="" id="" placeholder="И-Мэйл">
+        <input type="submit" value="Илгээх">
+    </form>
+</body>
+</html>

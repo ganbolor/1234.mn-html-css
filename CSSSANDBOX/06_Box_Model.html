@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box model / Margin and Padding</title>
+    <style>
+        /* margin - border - padding - content */
+        /* margin - Гадна талд байгаа зай */
+        /* padding - Дотор талд авах зай */
+        *{
+            margin:0px;
+            padding: 0px;
+            /* Хайрцаг хэмээ paddin хамаарахгүй тогтмол байна */
+            box-sizing: border-box;
+        }
+
+        .box {
+            background: #f4f4f4;
+            border: 2px #777 solid;
+            width: 600px;
+
+            /******************************/
+            /* Padding on all sides*/
+            padding: 20px;
+            /* 4 side padding, padding per side */
+            padding-top: 30px;
+            padding-right: 40px;
+            padding-bottom: 30px;
+            padding-left: 40px;
+
+            /* short = top, right, bottom, left */
+            padding: 10px 20px 10px 20px;
+            padding: 20px 30px;
+
+
+
+            /******************************/
+            /* 4 side margin, margin per side */
+            margin-top: 30px;
+            margin-right: 40px;
+            margin-bottom: 30px;
+            margin-left: 40px;
+
+            /* short = top, right, bottom, left */
+            margin: 10px 20px 10px 20px;
+            margin: 20px 30px;
+
+            margin: 20px;
+
+
+        }
+        .box h3{
+            padding-bottom: 20px;
+        }
+        .box p {
+            margin: 0px
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h3>1-р хайрцаг</h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae tempore molestias dolorem eligendi inventore. A eum eaque doloribus officiis esse?</p>
+    </div>
+    <div class="box">
+        <h3>2-р хайрцаг</h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae tempore molestias dolorem eligendi inventore. A eum eaque doloribus officiis esse?</p>
+    </div>
+    <div class="box">
+        <h3>3-р хайрцаг</h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae tempore molestias dolorem eligendi inventore. A eum eaque doloribus officiis esse?</p>
+    </div>
+</body>
+</html>

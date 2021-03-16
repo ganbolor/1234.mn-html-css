@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Alignment</title>
+    <style>
+        /***************************************/
+        /* justify-content - Хэвтээ тэнхлэг зэрэгцүүлэлт сонголтууд
+                flex-start;  -зүүн шахаж байрлуулна
+                flex-end; 
+                center;
+                space-around; 
+                space-between;
+                space-evenly; - бүх талд ижил зай авч байна
+              */
+        /***************************************/
+         /* align-items - Босоо тэнхлэг зэрэгцүүлэлт сонголтууд
+                stretch;   - Баганаа дүүргэнэ
+                flex-start;
+                flex-end;
+                center;
+                baseline;  -flex-start адил дээрээ гарна
+            */
+        /***************************************/
+        /* align-content- Item уудыг босоо тэнхлэгийн дагуу зэрэгцүүлэлт - Илүү сул зай /ExtraSpace/ байгаа тохиолдолд тохируулна
+                flex-start; 
+                flex-end; 
+                center;
+                space-around; 
+                space-between;
+             */
+
+
+        .item {
+            background: #d1fca8;
+            border: #ccc solid 1px;
+            padding: 1rem;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0.5rem;
+            flex-basis: 60px;
+        }
+        #example1 .container{
+            background: rgb(192, 108, 108);
+            display: flex;
+            height: 110px;
+            margin-bottom: 20px;
+        }
+        #example1 #type1 {
+            justify-content: flex-start; 
+        }        
+        #example1 #type2{
+            justify-content:  flex-end;
+        }
+        #example1 #type3 {
+            justify-content:  center;
+        }
+        #example1 #type4 {
+            justify-content:  space-around;
+        }
+        #example1 #type5 {
+            justify-content:  space-between;
+        }
+        #example1 #type6 {
+            justify-content:  space-evenly;
+        }
+        
+
+        #example2 .container{
+            background: rgb(2, 131, 218);
+            display: flex;
+            height: 300px;
+            width: 800px;
+            margin-bottom: 20px;
+        }
+        #example2 #type1 {
+            justify-content:  space-evenly; 
+            align-items: stretch;
+        }        
+        #example2 #type2{
+            justify-content:   space-evenly;
+            align-items: flex-start;
+        }
+        #example2 #type3 {
+            justify-content:   space-evenly;
+            align-items: flex-end;
+        }
+        #example2 #type4 {
+            justify-content:   space-evenly;
+            align-items: center;
+        }
+        #example2 #type5 {
+            justify-content:   space-evenly;
+            align-items: baseline;
+        }
+        
+
+        #example3 .container{
+            background: rgb(81, 218, 2);
+            display: flex;
+            height: 400px;
+            width: 700px;
+
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        #example3 .item {
+            flex-basis: 150px;
+        }
+        #example3 #type1 {
+            justify-content: space-evenly; 
+            align-items: baseline;
+            align-content: flex-start;
+        }        
+        #example3 #type2{
+            justify-content: space-evenly;
+            align-items: baseline;
+            align-content: flex-end;
+        }     
+        #example3 #type3{
+            justify-content: space-evenly;
+            align-items: baseline;
+            align-content: center;
+        }
+        #example3 #type4 {
+            justify-content: space-evenly;
+            align-items: baseline;
+            align-content: space-around;
+        }
+        #example3 #type5 {
+            justify-content: space-evenly;
+            align-items: baseline;
+            align-content: space-between;
+        }
+        
+        #example4 .container{
+            background: rgb(218, 2, 103);
+            display: flex;
+            height: 400px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        #example4 .item {
+            flex-basis: 150px;
+        }
+
+        #example4 #type1 {
+            justify-content: space-evenly;
+            align-items: baseline;
+        }
+
+        #example4 #type1 .item2{
+            align-self: flex-end;
+        }
+        
+        #example4 #type2 {
+            justify-content: space-evenly;
+            align-items: baseline;
+        }
+        #example4 #type2 .item2{
+            align-self: center;
+        }
+
+        #example5 .container{
+            background: rgb(2, 211, 218);
+            display: flex;
+            height: 300px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        #example5 #type1 {
+            justify-content: space-evenly;
+            align-items: baseline;
+        }
+        #example5 #type1 .item1 {
+            order:3
+        }
+        #example5 #type1 .item2 {
+            order:1
+        }
+        #example5 #type1 .item3 {
+            order:2
+        }
+
+        #example5 #type2 {
+            justify-content: space-evenly;
+            align-items: baseline;
+        }
+        #example5 #type2 .item1 {
+            order:2
+        }
+        #example5 #type2 .item2 {
+            order:3
+        }
+        #example5 #type2 .item3 {
+            order:1
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <!-- 
+        .item.item${<h3>item $</h3>}*3
+    -->
+    <h1>justify-content</h1>
+    <div id="example1">
+        <h2>justify-content: flex-start</h2>
+        <div class="container" id="type1">
+            <div class="item item1">
+                <h3>item 1</h3>
+            </div>
+            <div class="item item2">
+                <h3>item 2</h3>
+            </div>
+            <div class="item item3">
+                <h3>item 3</h3>
+            </div>
+        </div>
+        <h2>justify-content: flex-end</h2>
+        <div class="container" id="type2">
+            <div class="item item1">
+                <h3>item 1</h3>
+            </div>
+            <div class="item item2">
+                <h3>item 2</h3>
+            </div>
+            <div class="item item3">
+                <h3>item 3</h3>
+            </div>
+        </div>
+        <h2>justify-content: center</h2>
+        <div class="container" id="type3">
+            
+            <div class="item item1">
+                <h3>item 1</h3>
+            </div>
+            <div class="item item2">
+                <h3>item 2</h3>
+            </div>
+            <div class="item item3">
+                <h3>item 3</h3>
+            </div>
+        </div>
+        
+        <h2>justify-content: space-around</h2>
+        <div class="container" id="type4">
+            <div class="item item1">
+                <h3>item 1</h3>
+            </div>
+            <div class="item item2">
+                <h3>item 2</h3>
+            </div>
+            <div class="item item3">
+                <h3>item 3</h3>
+            </div>
+        </div>
+
+        <h2>justify-content: space-between</h2>
+        <div class="container" id="type5">
+            
+            <div class="item item1">
+                <h3>item 1</h3>
+            </div>
+            <div class="item item2">
+                <h3>item 2</h3>
+            </div>
+            <div class="item item3">
+                <h3>item 3</h3>
+            </div>
+        </div>
+
+        <h2>justify-content: space-evenly</h2>
+        <div class="container" id="type6">
+            
+            <div class="item item1">
+                <h3>item 1</h3>
+            </div>
+            <div class="item item2">
+                <h3>item 2</h3>
+            </div>
+            <div class="item item3">
+                <h3>item 3</h3>
+            </div>
+        </div>
+    </div>
+    
+    <h1>align-items</h1>
+    <div id="example2">
+        <h2>align-items: stretch</h2>
+        <div class="container" id="type1">
+            
+            <div class="item item1">
+                <h3>item 1</h3>
+            </div>
+            <div class="item item2">
+                <h3>item 2</h3>
+            </div>
+            <div class="item item3">
+                <h3>item 3</h3>
+            </div>
+        </div>
+        <h2>align-items: flex-start</h2>
+        <div class="container" id="type2">
+            
+            <div class="item item1">
+                <h3>item 1</h3>
+            </div>
+            <div class="item item2">
+                <h3>item 2</h3>
+            </div>
+            <div class="item item3">
+                <h3>item 3</h3>
+            </div>
+        </div>
+        <h2>align-items: flex-end</h2>
+        <div class="container" id="type3">
+            
+            <div class="item item1">
+                <h3>item 1</h3>
+            </div>
+            <div class="item item2">
+                <h3>item 2</h3>
+            </div>
+            <div class="item item3">
+                <h3>item 3</h3>
+            </div>
+        </div>
+        
+        <h2>align-items: center</h2>
+        <div class="container" id="type4">
+            <div class="item item1">
+                <h3>item 1</h3>
+            </div>
+            <div class="item item2">
+                <h3>item 2</h3>
+            </div>
+            <div class="item item3">
+                <h3>item 3</h3>
+            </div>
+        </div>
+
+        <h2>align-items: flex-start</h2>
+        <div class="container" id="type5">
+            
+            <div class="item item1">
+                <h3>item 1</h3>
+            </div>
+            <div class="item item2">
+                <h3>item 2</h3>
+            </div>
+            <div class="item item3">
+                <h3>item 3</h3>
+            </div>
+        </div>
+    </div>
+    
+    <h1>align-content</h1>
+    <div id="example3">
+        <h2>align-content: flex-start</h2>
+        <div class="container" id="type1">
+            <div class="item item1">
+                <h3>item 1</h3>
+            </div>
+            <div class="item item2">
+                <h3>item 2</h3>
+            </div>
+            <div class="item item3">
+                <h3>item 3</h3>
+            </div>
+            <div class="item item4">
+                <h3>item 4</h3>
+            </div>
+            <div class="item item5">
+                <h3>item 5</h3>
+            </div>
+            <div class="item item6">
+                <h3>item 6</h3>
+            </div>
+        </div>
+        
+        <h2>align-content: flex-end</h2>
+        <div class="container" id="type2">
+            <div class="item item1">
+                <h3>item 1</h3>
+            </div>
+            <div class="item item2">
+                <h3>item 2</h3>
+            </div>
+            <div class="item item3">
+                <h3>item 3</h3>
+            </div>
+            <div class="item item4">
+                <h3>item 4</h3>
+            </div>
+            <div class="item item5">
+                <h3>item 5</h3>
+            </div>
+            <div class="item item6">
+                <h3>item 6</h3>
+            </div>
+        </div>
+        
+        <h2>align-content: center</h2>
+        <div class="container" id="type3">
+            <div class="item item1">
+                <h3>item 1</h3>
+            </div>
+            <div class="item item2">
+                <h3>item 2</h3>
+            </div>
+            <div class="item item3">
+                <h3>item 3</h3>
+            </div>
+            <div class="item item4">
+                <h3>item 4</h3>
+            </div>
+            <div class="item item5">
+                <h3>item 5</h3>
+            </div>
+            <div class="item item6">
+                <h3>item 6</h3>
+            </div>
+        </div>
+        
+        <h2>align-content: space-around</h2>
+        <div class="container" id="type4">
+            <div class="item item1">
+                <h3>item 1</h3>
+            </div>
+            <div class="item item2">
+                <h3>item 2</h3>
+            </div>
+            <div class="item item3">
+                <h3>item 3</h3>
+            </div>
+            <div class="item item4">
+                <h3>item 4</h3>
+            </div>
+            <div class="item item5">
+                <h3>item 5</h3>
+            </div>
+            <div class="item item6">
+                <h3>item 6</h3>
+            </div>
+        </div>
+        
+        <h2>align-content: space-between</h2>
+        <div class="container" id="type5">
+            <div class="item item1">
+                <h3>item 1</h3>
+            </div>
+            <div class="item item2">
+                <h3>item 2</h3>
+            </div>
+            <div class="item item3">
+                <h3>item 3</h3>
+            </div>
+            <div class="item item4">
+                <h3>item 4</h3>
+            </div>
+            <div class="item item5">
+                <h3>item 5</h3>
+            </div>
+            <div class="item item6">
+                <h3>item 6</h3>
+            </div>
+        </div>
+        
+    </div>
+    
+    <h1>Item-ийн байрлал</h1>
+    <div id="example4">
+        
+        <div class="container" id="type1">
+            <div class="item item1">
+                <h3>item 1</h3>
+            </div>
+            <div class="item item2">
+                <h3>item 2</h3>
+            </div>
+            <div class="item item3">
+                <h3>item 3</h3>
+            </div>
+           
+        </div>
+        
+        <div class="container" id="type2">
+            <div class="item item1">
+                <h3>item 1</h3>
+            </div>
+            <div class="item item2">
+                <h3>item 2</h3>
+            </div>
+            <div class="item item3">
+                <h3>item 3</h3>
+            </div>
+           
+        </div>
+    </div>
+
+    <h1>Дараалал</h1>
+    <div id="example5">
+        
+        <div class="container" id="type1">
+            <div class="item item1">
+                <h3>item 1</h3>
+            </div>
+            <div class="item item2">
+                <h3>item 2</h3>
+            </div>
+            <div class="item item3">
+                <h3>item 3</h3>
+            </div>
+           
+        </div>
+        
+        <div class="container" id="type2">
+            <div class="item item1">
+                <h3>item 1</h3>
+            </div>
+            <div class="item item2">
+                <h3>item 2</h3>
+            </div>
+            <div class="item item3">
+                <h3>item 3</h3>
+            </div>
+           
+        </div>
+    </div>
+
+</body>
+</html>

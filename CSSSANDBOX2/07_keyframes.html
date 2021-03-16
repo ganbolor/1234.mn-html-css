@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyframe animation</title>
+    <style>
+        body {
+            background: #333;
+        }
+        .box {
+            background: #fff;
+            width: 200px;
+            height: 200px;
+            /* байрлал хөдлөх бол */
+            position: relative;
+
+            animation-name: animate1;
+            /* Хэр хурдан хийх вэ */
+            animation-duration: 2s;
+            /* хэдэн удаа */
+            animation-iteration-count: 2;
+            /**/
+            animation-fill-mode: forwards;
+            /* Хэдэн сек дараа ажиллах вэ */
+            /* animation-delay: 3s; */
+            /* Эсрэг ээр ажиллах бол */
+            /* animation-direction: alternate-reverse; */
+            /* Эхлээд хурдан сүүлдээ удаан ажиллах бол гэх мэт */
+            animation-timing-function: easy-in-out;
+
+            /* Нэг мөрөнд дээр аним -г хийх */
+
+            animation: animate1 5s forwards 1s ease-in-out;
+        }
+        @keyframes animate1 {
+            from {
+                top:0px;
+                width: 200px;
+            }
+            to {
+                width: 600px;
+                background: red;
+                /* дээд байрлал */
+                top: 300px;
+            }
+        } 
+            
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Хөдөлгөөнт дүрс</h1>
+    </header>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS selectors</title>
+    <style>
+        h2 {
+            color: green;
+        }
+        #green-heading{
+            color: blue;
+        }
+        /* . бол классд зориулсан */
+        .primary-heading {
+            color: pink;
+        }
+        /* # бол ID-д зориулагдсан */
+        #welcome {
+            background-color:gray;
+        }
+        /* Multiple Selectors */
+        #welcome, #about {
+            border: 1px solid yellow;
+            padding: 10px;
+            margin-bottom: 5px;
+        }
+        /* Nested Selectors */
+        #welcome p {
+            font-size: 20px;
+        }
+        /* Element selector */
+        body{
+            background-color: #abcaaa;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="welcome" class="welcome">
+        <h2 >Тавтай морил</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores laboriosam distinctio mollitia assumenda maxime doloremque ullam eveniet id libero, asperiores tempore eum? Eius, soluta. Sapiente minima suscipit quos! Est, ullam.</p>
+    </div>
+    <div id="about" class="about">
+        <h2 id="green-heading">Тавтай морил</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni earum aut, distinctio saepe vero facere odio blanditiis recusandae quas doloribus.</p>
+    </div>
+    <div id="fooder" class="fooder">
+        <h2 class="primary-heading">Хөл мэдээлэл</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur, ab!</p>
+    </div>
+</body>
+</html>
